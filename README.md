@@ -2,7 +2,7 @@
 slides and demos for vBrisket network automation talk 
 
 
-[Alt text](environment.png?raw=true "Optional Title")
+![Alt text](environment.png?raw=true "Optional Title")
 
 This is a presentation that was given at vBrisket on November 4th regarding network automation.
 
