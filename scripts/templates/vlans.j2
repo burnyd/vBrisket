@@ -1,0 +1,7 @@
+vlan {{ vlan_num }}
+!
+interface vlan {{ vlan_num }}
+ip virtual-router address 10.10.{{ vlan_num }}.1
+no shut
+!
+

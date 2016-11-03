@@ -1,0 +1,19 @@
+---
+
+  - name: Create vlans and SVIs
+    hosts: leafs
+    connection: local
+    gather_facts: no
+
+    tasks: 
+     - name: Create vlans
+       eos_command:
+         commands: show running-config
+         #wait_for: result[0]
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+        
+        

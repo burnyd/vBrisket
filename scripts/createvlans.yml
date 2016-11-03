@@ -1,0 +1,22 @@
+---
+
+  - name: Create vlans and SVIs
+    hosts: leafs
+    connection: local
+    gather_facts: no
+
+    tasks: 
+     - name: Create vlans
+       eos_template:
+         src: /vagrant/scripts/templates/vlans.j2
+         include_defaults: True
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+
+
+
+
+

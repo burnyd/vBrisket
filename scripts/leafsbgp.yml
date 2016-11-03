@@ -1,0 +1,66 @@
+---
+
+  - name: Configure BGP on Leaf1a
+    hosts: leaf1a
+    connection: local
+    gather_facts: no
+
+    tasks: 
+     - name: Configigure BGP on Leaf1a
+       eos_template:
+         src: /vagrant/templates/leaf1abgp.j2
+         include_defaults: True
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+
+  - name: Configure BGP on leaf1b
+    hosts: leaf1b
+    connection: local
+    gather_facts: no
+
+    tasks:
+     - name: Configure BGP on leaf1b
+       eos_template:
+         src: /vagrant/templates/leaf1bbgp.j2
+         include_defaults: True
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+
+  - name: Configure BGP on leaf2a
+    hosts: leaf2a
+    connection: local
+    gather_facts: no
+
+    tasks:
+     - name: Configure BGP on leaf2a
+       eos_template:
+         src: /vagrant/templates/leaf2abgp.j2
+         include_defaults: True
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+
+  - name: Configure BGP on leaf2b
+    hosts: leaf2b
+    connection: local
+    gather_facts: no
+
+    tasks:
+     - name: Configure BGP on leaf2b
+       eos_template:
+         src: /vagrant/templates/leaf2bbgp.j2
+         include_defaults: True
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+

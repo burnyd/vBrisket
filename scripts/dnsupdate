@@ -1,0 +1,12 @@
+#!/bin/bash
+_HOST=$(hostname)
+_MGTINT=$(ip addr list eth1 |grep inet |cut -d' ' -f6|cut -d/ -f1)
+
+nsupdate << EOF
+server 10.0.0.15
+update delete $_HOST.test.com
+update add $_HOST.test.com 3600 A $_MGTINT
+show
+send
+EOF
+

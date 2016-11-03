@@ -1,0 +1,34 @@
+---
+
+  - name: Configure BGP on spine1
+    hosts: spine1
+    connection: local
+    gather_facts: no
+
+    tasks: 
+     - name: Configigure BGP on spine1
+       eos_template:
+         src: /vagrant/templates/spine1bgp.j2
+         include_defaults: True
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+
+  - name: Configure BGP on spine2
+    hosts: spine2
+    connection: local
+    gather_facts: no
+
+    tasks: 
+     - name: Configigure BGP on spine2
+       eos_template:
+         src: /vagrant/templates/spine2bgp.j2
+         include_defaults: True
+         host: "{{ inventory_hostname }}"
+         password: password
+         username: api
+         authorize: yes
+         transport: cli
+
