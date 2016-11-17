@@ -20,4 +20,4 @@ The only prerquisites are that vagrant and virtualbox are installed.
 
 5.) vagrant ssh mgt1 
 
-6.) Each device has a management ip on the 192.168.15.x network. 
+6.) Each device has a management ip on the 192.168.15.x network. So once connected to mgt1 you can ssh into leaf1a for example.  ssh leaf1a everything is also in DNS.  
