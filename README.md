@@ -20,4 +20,4 @@ The only prerquisites are that vagrant and virtualbox are installed.
 
 5.) vagrant ssh mgt1 
 
-6.) Each device has a management ip on the 192.168.15.x network. So once connected to mgt1 you can ssh into leaf1a for example.  ssh leaf1a everything is also in DNS.  Without connecting directly into mgt1 you can run the following commands.  vagrant ssh leaf1a.  It will drop you into bash.  To get into the cli run the cli process FastCli.
+6.) Each device has a management ip on the 192.168.15.x network. So once connected to mgt1 you can ssh into leaf1a for example.  ssh leaf1a everything is also in DNS.  Without connecting directly into mgt1 you can run the following commands.  vagrant ssh leaf1a.  It will drop you into bash.  To get into the cli run the cli process FastCli. The username / password for everything is vagrant/vagrant. 
